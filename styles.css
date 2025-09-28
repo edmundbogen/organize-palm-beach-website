@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img {
-    height: 75px;
+    height: 101px;
     width: auto;
     object-fit: contain;
 }
@@ -111,8 +111,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero {
-    margin-top: 105px;
-    min-height: calc(100vh - 105px);
+    margin-top: 131px;
+    min-height: calc(100vh - 131px);
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
