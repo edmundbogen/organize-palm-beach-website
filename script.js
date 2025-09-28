@@ -113,6 +113,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
                 const target = entry.target;
                 const value = target.textContent;
+
+                // Check if it's "Dozens" - if so, don't animate
+                if (value === 'Dozens') {
+                    target.classList.add('counted');
+                    return;
+                }
+
                 const isPercentage = value.includes('%');
                 const number = parseInt(value.replace(/\D/g, ''));
                 const increment = number / 50;
