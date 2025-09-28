@@ -114,14 +114,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 const target = entry.target;
                 const value = target.textContent;
 
-                // Check if it's "Dozens" - if so, don't animate
-                if (value === 'Dozens') {
+                // Check if the value contains only non-numeric text (like "Dozens")
+                const number = parseInt(value.replace(/\D/g, ''));
+
+                // If it's not a number or is NaN, just mark as counted and keep original text
+                if (isNaN(number) || value.toLowerCase().includes('dozens')) {
                     target.classList.add('counted');
+                    // Keep the original text as is
+                    target.textContent = value;
                     return;
                 }
 
                 const isPercentage = value.includes('%');
-                const number = parseInt(value.replace(/\D/g, ''));
                 const increment = number / 50;
                 let current = 0;
 
