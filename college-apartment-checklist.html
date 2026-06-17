@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The College Apartment Checklist | Organize Palm Beach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1e40af;
+    --blue-dark:#15296b;
+    --gold:#b8924a;
+    --ink:#111;
+    --muted:#5a5f6b;
+    --line:#e6e8ee;
+    --bg:#f7f8fb;
+    --paper:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Montserrat',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .page{max-width:920px;margin:0 auto;background:var(--paper);}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.15;}
+
+  /* HEADER */
+  .hero{
+    background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+    color:#fff;
+    padding:48px 56px 40px;
+    text-align:center;
+  }
+  .hero .logo{
+    height:90px;background:#fff;padding:10px 18px;border-radius:8px;
+    display:inline-block;margin-bottom:22px;
+  }
+  .hero .eyebrow{
+    letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:600;
+    opacity:.85;margin-bottom:10px;
+  }
+  .hero h1{font-size:42px;font-weight:700;margin-bottom:14px;}
+  .hero p{max-width:640px;margin:0 auto;font-weight:300;font-size:16px;opacity:.95;}
+
+  /* INTRO STRIP */
+  .intro{
+    padding:32px 56px;border-bottom:1px solid var(--line);
+    background:#fbfcfe;
+  }
+  .intro p{color:var(--muted);font-size:15px;}
+  .intro strong{color:var(--ink);}
+
+  /* SECTION SHELL */
+  .section{padding:38px 56px;border-bottom:1px solid var(--line);}
+  .section h2{
+    font-size:26px;color:var(--blue-dark);margin-bottom:4px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .section .sub{color:var(--muted);font-size:13px;margin-bottom:22px;letter-spacing:.3px;}
+  .tag{
+    display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;
+    font-weight:700;letter-spacing:1px;text-transform:uppercase;
+    background:var(--gold);color:#fff;padding:4px 10px;border-radius:20px;
+  }
+
+  /* PRIORITY (the 20%) */
+  .priority{background:linear-gradient(180deg,#fffdf6,#fffaf0);}
+  .priority h2{color:#8a6b27;}
+  .pri-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:10px 32px;margin-top:6px;
+  }
+  .pri-grid .item{font-weight:500;}
+
+  /* CHECK GRID */
+  .cols{columns:2;column-gap:48px;}
+  .cat{break-inside:avoid;margin-bottom:20px;}
+  .cat h3{
+    font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;
+    text-transform:uppercase;letter-spacing:1.2px;color:var(--blue);
+    margin-bottom:8px;padding-bottom:5px;border-bottom:2px solid var(--line);
+  }
+  .item{
+    display:flex;align-items:flex-start;gap:9px;font-size:14px;
+    padding:3px 0;color:#26292f;
+  }
+  .item .box{
+    flex:0 0 14px;display:inline-block;width:14px;height:14px;
+    border:1.5px solid var(--blue);background:#fff;
+    border-radius:2px;margin-top:3px;box-sizing:border-box;
+  }
+  .star{color:var(--gold);font-weight:700;}
+
+  /* PRO TIPS */
+  .tips{background:var(--blue-dark);color:#fff;}
+  .tips h2{color:#fff;}
+  .tips .sub{color:rgba(255,255,255,.7);}
+  .tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 36px;margin-top:8px;}
+  .tip{font-size:14px;}
+  .tip b{display:block;font-weight:600;margin-bottom:3px;color:#e9d9b8;}
+  .tip span{color:rgba(255,255,255,.82);font-weight:300;}
+
+  /* CTA */
+  .cta{padding:44px 56px;text-align:center;}
+  .cta h2{font-size:30px;color:var(--blue-dark);margin-bottom:12px;}
+  .cta p{color:var(--muted);max-width:600px;margin:0 auto 24px;font-size:15px;}
+  .contact{
+    display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px;
+  }
+  .contact a{
+    text-decoration:none;font-weight:600;font-size:15px;
+    border:1.6px solid var(--blue);color:var(--blue);
+    padding:12px 26px;border-radius:40px;transition:.2s;
+  }
+  .contact a.solid{background:var(--blue);color:#fff;}
+  .signoff{margin-top:26px;color:var(--muted);font-size:13px;}
+  .signoff b{color:var(--ink);}
+
+  footer{
+    background:#0d1530;color:rgba(255,255,255,.6);text-align:center;
+    padding:22px;font-size:12px;letter-spacing:.5px;
+  }
+
+  @media(max-width:680px){
+    .hero,.intro,.section,.cta{padding-left:24px;padding-right:24px;}
+    .hero h1{font-size:32px;}
+    .cols{columns:1;}
+    .pri-grid,.tips-grid{grid-template-columns:1fr;}
+  }
+  @media print{
+    @page{size:Letter;margin:0;}
+    body{background:#fff;}
+    .page{max-width:100%;margin:0;}
+    .hero{padding:38px 56px 30px;}
+    .hero h1{font-size:36px;}
+    .section{padding:30px 56px;}
+    .section h2{font-size:23px;}
+    /* keep each room section together; start big ones on a fresh page */
+    .section{page-break-inside:avoid;}
+    .section.priority,.section.tips{page-break-inside:avoid;}
+    .cta{page-break-inside:avoid;}
+    .cat,.tip,.pri-grid .item,.item{break-inside:avoid;}
+    /* page-break tuning to avoid orphaned headings / cramped pages */
+    .intro{page-break-after:auto;}
+    .tips{page-break-before:auto;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="logo.jpeg" alt="Organize Palm Beach" class="logo">
+    <div class="eyebrow">A Parent &amp; Student Planning Guide</div>
+    <h1>The College Apartment Checklist</h1>
+    <p>Everything your student actually needs to move in, settle in, and thrive — organized room by room, with the true essentials flagged so you buy smart, not twice.</p>
+  </header>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <p><strong>Sending a child to college is a milestone — and a logistics project.</strong> We built this checklist for the families we work with so the move-in is calm instead of chaotic. Start with <strong>The First 20%</strong> below (the items that make the apartment livable on day one), then work through the room-by-room list. Tip: measure the space and confirm what's already provided <em>before</em> you shop.</p>
+  </section>
+
+  <!-- PRIORITY: THE 20% -->
+  <section class="section priority">
+    <h2>The First 20% <span class="tag">Buy These First</span></h2>
+    <div class="sub">If you only handle one list this week, make it this one. These are the items that make the apartment functional and comfortable from night one.</div>
+    <div class="pri-grid">
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Quality bed sheets, comforter &amp; pillows</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Mattress topper &amp; protector</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Bath towels + shower curtain &amp; liner</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Cookware set, knives &amp; cutting board</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Dinnerware, flatware &amp; drinkware</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Coffee maker + one key appliance (air fryer)</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Trash cans with liners (kitchen + bath)</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Core cleaning kit &amp; vacuum</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Laundry hamper &amp; detergent</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Blackout curtains &amp; a good lamp</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Under-bed &amp; closet storage bins</span></div>
+      <div class="item"><span class="box"></span><span><span class="star">★</span> Safety: first aid kit, fire blanket, flashlight</span></div>
+    </div>
+  </section>
+
+  <!-- BEDROOM -->
+  <section class="section">
+    <h2>Bedroom</h2>
+    <div class="sub">Comfort, rest, and storage — where it all starts.</div>
+    <div class="cols">
+      <div class="cat">
+        <h3>Bedding</h3>
+        <div class="item"><span class="box"></span>Bed sheets (100% cotton)</div>
+        <div class="item"><span class="box"></span>Comforter / quilt &amp; blankets</div>
+        <div class="item"><span class="box"></span>Pillows &amp; pillowcases</div>
+        <div class="item"><span class="box"></span>Mattress topper</div>
+        <div class="item"><span class="box"></span>Mattress protector / encasement</div>
+        <div class="item"><span class="box"></span>Bed skirt</div>
+      </div>
+      <div class="cat">
+        <h3>Furniture &amp; Storage</h3>
+        <div class="item"><span class="box"></span>Nightstand</div>
+        <div class="item"><span class="box"></span>Bedside lamp</div>
+        <div class="item"><span class="box"></span>Under-bed storage bins</div>
+        <div class="item"><span class="box"></span>Closet organizers (doublers, shoe shelves)</div>
+        <div class="item"><span class="box"></span>Storage bench</div>
+        <div class="item"><span class="box"></span>Mini fridge (optional)</div>
+      </div>
+      <div class="cat">
+        <h3>Comfort &amp; Décor</h3>
+        <div class="item"><span class="box"></span>Blackout curtains</div>
+        <div class="item"><span class="box"></span>Full-length mirror</div>
+        <div class="item"><span class="box"></span>Jewelry / accessory organizer</div>
+        <div class="item"><span class="box"></span>Smart plugs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BATHROOM -->
+  <section class="section">
+    <h2>Bathroom</h2>
+    <div class="sub">Small space, high impact — keep it clean and clutter-free.</div>
+    <div class="cols">
+      <div class="cat">
+        <h3>Shower &amp; Bath</h3>
+        <div class="item"><span class="box"></span>Shower curtain + liner + rings</div>
+        <div class="item"><span class="box"></span>Shower caddy / shelves</div>
+        <div class="item"><span class="box"></span>Bath mat / rug</div>
+        <div class="item"><span class="box"></span>Quick-dry towels</div>
+        <div class="item"><span class="box"></span>Towel hooks</div>
+      </div>
+      <div class="cat">
+        <h3>Storage</h3>
+        <div class="item"><span class="box"></span>Over-toilet organizer</div>
+        <div class="item"><span class="box"></span>Under-cabinet drawers</div>
+        <div class="item"><span class="box"></span>Countertop organizer</div>
+        <div class="item"><span class="box"></span>Hair-tool organizer + heat mat</div>
+      </div>
+      <div class="cat">
+        <h3>Clean &amp; Safe</h3>
+        <div class="item"><span class="box"></span>Toilet brush &amp; cleaner</div>
+        <div class="item"><span class="box"></span>Trash can with liners</div>
+        <div class="item"><span class="box"></span>First aid kit</div>
+        <div class="item"><span class="box"></span>Nightlight</div>
+        <div class="item"><span class="box"></span>Damp Rid (moisture control)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KITCHEN -->
+  <section class="section">
+    <h2>Kitchen</h2>
+    <div class="sub">The biggest list — and where smart organizing saves the most money and space.</div>
+    <div class="cols">
+      <div class="cat">
+        <h3>Cookware &amp; Prep</h3>
+        <div class="item"><span class="box"></span>Non-stick cookware set</div>
+        <div class="item"><span class="box"></span>Knife set &amp; cutting boards</div>
+        <div class="item"><span class="box"></span>Utensil set + holder</div>
+        <div class="item"><span class="box"></span>Measuring cups &amp; spoons</div>
+        <div class="item"><span class="box"></span>Glass baking dishes &amp; sheet pans</div>
+        <div class="item"><span class="box"></span>Can opener, whisk, vegetable chopper</div>
+      </div>
+      <div class="cat">
+        <h3>Dishes &amp; Drinkware</h3>
+        <div class="item"><span class="box"></span>Dinnerware set</div>
+        <div class="item"><span class="box"></span>Flatware / silverware set</div>
+        <div class="item"><span class="box"></span>Bowls &amp; coffee mugs</div>
+        <div class="item"><span class="box"></span>Glasses (pint &amp; wine)</div>
+      </div>
+      <div class="cat">
+        <h3>Small Appliances</h3>
+        <div class="item"><span class="box"></span>Coffee maker (Keurig / drip)</div>
+        <div class="item"><span class="box"></span>Air fryer</div>
+        <div class="item"><span class="box"></span>Toaster or toaster oven</div>
+        <div class="item"><span class="box"></span>Personal blender</div>
+        <div class="item"><span class="box"></span>Crockpot (optional)</div>
+      </div>
+      <div class="cat">
+        <h3>Food Storage &amp; Organizing</h3>
+        <div class="item"><span class="box"></span>Glass storage containers</div>
+        <div class="item"><span class="box"></span>Dry-food / pantry containers</div>
+        <div class="item"><span class="box"></span>Pantry &amp; cabinet organizers</div>
+        <div class="item"><span class="box"></span>Brita water dispenser</div>
+        <div class="item"><span class="box"></span>Dish rack &amp; dish towels</div>
+        <div class="item"><span class="box"></span>Paper towel holder</div>
+      </div>
+      <div class="cat">
+        <h3>Safety &amp; Extras</h3>
+        <div class="item"><span class="box"></span>Fire blanket / fire spray</div>
+        <div class="item"><span class="box"></span>Kitchen trash can</div>
+        <div class="item"><span class="box"></span>Simple college cookbook</div>
+        <div class="item"><span class="box"></span>Reusable grocery cart / bag</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVING + ENTRY -->
+  <section class="section">
+    <h2>Living Room &amp; Entryway</h2>
+    <div class="sub">For unfurnished or shared spaces — build comfort and storage.</div>
+    <div class="cols">
+      <div class="cat">
+        <h3>Furniture &amp; Storage</h3>
+        <div class="item"><span class="box"></span>Couch slipcover (if furnished)</div>
+        <div class="item"><span class="box"></span>Coffee table &amp; end table</div>
+        <div class="item"><span class="box"></span>Bookshelf / storage shelving</div>
+        <div class="item"><span class="box"></span>Extra seating</div>
+        <div class="item"><span class="box"></span>Area rug (low-pile)</div>
+      </div>
+      <div class="cat">
+        <h3>Entertainment &amp; Lighting</h3>
+        <div class="item"><span class="box"></span>Smart TV + streaming stick</div>
+        <div class="item"><span class="box"></span>Sound bar (optional)</div>
+        <div class="item"><span class="box"></span>Floor lamp / table lamp</div>
+        <div class="item"><span class="box"></span>Wall art &amp; board games</div>
+      </div>
+      <div class="cat">
+        <h3>Entryway</h3>
+        <div class="item"><span class="box"></span>Coat rack / hooks</div>
+        <div class="item"><span class="box"></span>Shoe rack or bench</div>
+        <div class="item"><span class="box"></span>Boot / wet tray</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLEANING / LAUNDRY / SAFETY -->
+  <section class="section">
+    <h2>Cleaning, Laundry &amp; Safety</h2>
+    <div class="sub">The unglamorous list that keeps everything running.</div>
+    <div class="cols">
+      <div class="cat">
+        <h3>Cleaning</h3>
+        <div class="item"><span class="box"></span>Vacuum cleaner</div>
+        <div class="item"><span class="box"></span>Swiffer / mop</div>
+        <div class="item"><span class="box"></span>All-purpose cleaning supplies</div>
+        <div class="item"><span class="box"></span>Small tool kit</div>
+      </div>
+      <div class="cat">
+        <h3>Laundry</h3>
+        <div class="item"><span class="box"></span>Laundry hamper / basket</div>
+        <div class="item"><span class="box"></span>Detergent &amp; supplies</div>
+        <div class="item"><span class="box"></span>Drying rack (if needed)</div>
+      </div>
+      <div class="cat">
+        <h3>Safety &amp; Security</h3>
+        <div class="item"><span class="box"></span>First aid kit</div>
+        <div class="item"><span class="box"></span>Carbon monoxide detector</div>
+        <div class="item"><span class="box"></span>Fire blanket &amp; flashlight + batteries</div>
+        <div class="item"><span class="box"></span>Door lock reinforcement / Ring</div>
+        <div class="item"><span class="box"></span>Personal safety alarm</div>
+      </div>
+      <div class="cat">
+        <h3>Comfort &amp; Misc</h3>
+        <div class="item"><span class="box"></span>Air purifier / humidifier</div>
+        <div class="item"><span class="box"></span>Portable phone charger</div>
+        <div class="item"><span class="box"></span>Umbrella</div>
+        <div class="item"><span class="box"></span>Quick-dry pool / beach towels</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRO TIPS -->
+  <section class="section tips">
+    <h2>Before You Buy — Pro Tips</h2>
+    <div class="sub">A few minutes of planning prevents the most common (and expensive) move-in mistakes.</div>
+    <div class="tips-grid">
+      <div class="tip"><b>Measure first.</b><span>Bed size + mattress depth, closet layout, and room dimensions before ordering furniture or bins.</span></div>
+      <div class="tip"><b>Confirm what's provided.</b><span>Microwave, dishwasher, washer/dryer, ice maker — don't double-buy what the unit already has.</span></div>
+      <div class="tip"><b>Divide, don't split.</b><span>With roommates, each person <i>owns</i> shared items outright — no cost-splitting to untangle at move-out.</span></div>
+      <div class="tip"><b>Choose safe materials.</b><span>Look for OEKO-TEX® textiles and CertiPUR-US certified bedding for non-toxic peace of mind.</span></div>
+      <div class="tip"><b>Check the rules.</b><span>Wall-hanging and mounting policies vary — confirm before buying art, shelves, or command hooks.</span></div>
+      <div class="tip"><b>Storage is the secret.</b><span>Vertical and under-bed storage turns a small apartment into a calm, functional home.</span></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Let Us Handle the Heavy Lifting</h2>
+    <p>This checklist is the easy part. <strong>Organize Palm Beach</strong> can plan, source, measure, and set up your student's apartment so it's move-in ready and beautifully organized from day one — so you can focus on the goodbye hug, not the storage bins.</p>
+    <div class="contact">
+      <a class="solid" href="tel:19173303521">Call Sam &middot; 917-330-3521</a>
+      <a href="mailto:Sam@OrganizedPalmBeach.com">Sam@OrganizedPalmBeach.com</a>
+    </div>
+    <div class="signoff">
+      <b>Sam Bogen</b>, Principal Organizer &middot; Organize Palm Beach<br>
+      Serving Miami Beach to Palm Beach
+    </div>
+  </section>
+
+  <footer>
+    ORGANIZE PALM BEACH &nbsp;|&nbsp; Professional Organizing &middot; Miami Beach to Palm Beach &nbsp;|&nbsp; Sam@OrganizedPalmBeach.com
+  </footer>
+
+</div>
+</body>
+</html>
